@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;700&display=swap');
+
+:root {
+    /* Colors  */
+    /* Primary colors  */
+    --darkBlue: hsl(233, 26%, 24%);
+    --limeGreen: hsl(136, 65%, 51%);
+    --brightCyan: hsl(192, 70%, 51%);
+
+    /* Neutral colors  */
+    --grayishBlue: hsl(233, 8%, 62%);
+    --lightGrayishBlue: hsl(220, 16%, 96%);
+    --veryLightGray: hsl(0, 0%, 98%);
+    --white: hsl(0, 0%, 100%);
+
+    --fontNormal: 18px;  /* 18px*/
+
+}
+
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 100%;
+} 
+
+body {
+    position: relative;
+    overflow-x: hidden;
+    width: 100vw;
+    font-family: 'public Sans', sans-serif;
+    
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+    
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+.logo {
+    width: 141px;
+    height: 22px;
+    margin-left: 80px;
+}
+
+.header nav {
+    padding: 17px 24px;
+    align-items: center;
+
+}
+
+.header-links a, a:visited a:hover {
+    text-decoration: none;
+    
+}
+
+.header-links a {
+    font-size: 12px;
+    color: var(--grayishBlue);
+    transition: color 300ms ease-in-out;
+        
+}
+
+.header-links a:not(:last-child) {
+    margin-right: 32px;
+}
+
+.header-links a:hover {
+    color: var(--darkBlue);
+    padding: 34px 0px;
+    border-bottom: 5px solid;
+    border-image-source : linear-gradient(to right, var(--limeGreen), var(--brightCyan)); 
+    border-image-slice : 1;
+    transition: all .5ms ease-in-out;
+}
+
+/* .header-links a::before {
+    content: "";
+    position: absolute;
+    display: block;
+    opacity: 0;
+    transition: opacity 500ms ease-in-out;
+}  */
+
+.header-links a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -35px;  
+    width: 0;
+    height: 4px;
+    background: var(--grayishBlue);
+    transition: all .5s;
+}
+
+.header-links a:hover::after {
+    width: 100%;
+}
+
+.request-btn {
+    padding: 14px 34px;
+    background: linear-gradient(to right, var(--limeGreen), var(--brightCyan ));
+    border-radius: 50px;
+    border: 0;
+    cursor: pointer;
+    font-family: 'public Sans', sans-serif;
+    color: var(--white);
+    font-size: .9rem;
+    font-weight: 400;
+    
+}
+
+.request-btn:hover {
+    opacity: .7;
+}
+
+.dropdown-menu-btn {
+    display: none;
+}
+
+span, p {
+    color: var(--grayishBlue);
+}
+
+.hero {
+    background: var(--veryLightGray);
+    display: grid;
+    grid-template-columns: 40% 60%;
+    height: 90vh;
+    justify-content: center;
+    /* align-items: center; */
+    position: relative;
+    overflow-x: hidden;
+}
+
+.left-col {
+    margin-left: 80px;
+    padding-right: 80px;
+
+}
+
+.left-col h1 {
+    font-size: 40px;
+    font-weight: 400;
+    margin-top: 150px;
+    margin-bottom: 20px;
+}
+
+.left-col p {
+    font-size: 14px;
+    padding-right: 60px;
+    margin-bottom: 30px;
+}
+
+.right-col {
+    background: url(./images/bg-intro-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: 80px;
+    background-position-y: -235px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.hero-img {
+    translate: 24% -14%;
+}
+
+.why-easybank {
+    height: 650px;
+    padding: 220px 140px;
+    background-color: #f4f5f7;
+}
+
+.why-easybank h1 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 15px;
+
+}
+
+.why-easybank p {
+    color: hsl(233, 8%, 62%);
+
+}
+
+.why-easybank .list-benefits {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+    gap: 4rem;
+
+
+}
+
+.online-banking {
+    width: 335px;
+    
+}
+
+.simple-budgeting {
+    width: 335px;
+}
+
+.fast-onboarding {
+    width: 335px;
+}
+
+.open-api {
+    width: 335px;
+}
+
+
+
+/* Flexbox */
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* Hide for desktop and tablet */
+@media screen and (max-width: 375px) {
+
+    .header-links {
+        display: none;
+    }
+
+    .header-btn {
+        display: none;
+    }
+    
+}
+
+@media screen and (min-width: 376px) {
+
+    .header-links {
+        display: none;
+    }
+
+    .header-btn {
+        display: none;
+    } 
+
+    /*.header-menu {
+        display: none;
+    } */
+    
+}
+
+@media screen and (min-width: 811px) {
+
+    .header-links {
+        display: initial;
+    }
+
+    .header-btn {
+        display: initial;
+    } 
+
+    .header-menu {
+        display: none;
+    } 
+    
+}
+
+@media screen and (min-width: 1440px) {
+
+    .header-links {
+        display: initial;
+    }
+
+    .header-btn {
+        display: initial;
+    } 
+
+    .header-menu {
+        display: none;
+    }
+    
+}
+
+
